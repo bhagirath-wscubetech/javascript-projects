@@ -4,7 +4,7 @@ const IMGPATH = "https://image.tmdb.org/t/p/w1280";
 const SEARCHAPI =
     "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
 const moiveBox = document.querySelector("#movie-box")
-const getMovies = async(url) => {
+const getMovies = async (url) => {
     const response = await fetch(url)
     const data = await response.json()
     showMovies(data)
@@ -48,7 +48,7 @@ const showMovies = (data) => {
 
 document.querySelector("#search").addEventListener(
     "keyup",
-    function(event) {
+    function (event) {
         if (event.target.value != "") {
             getMovies(SEARCHAPI + event.target.value)
         } else {
