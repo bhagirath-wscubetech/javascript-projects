@@ -18,6 +18,12 @@ const goNext = () => {
 }
 
 const slideImage = () => {
+    // Check if the counter goes beyond the range of the slides array
+  if (counter <= -slides.length) {
+    counter = 0;
+  } else if (counter > 0) {
+    counter = -slides.length;
+  }
     slides.forEach(
         (slide) => {
             slide.style.transform = `translateY(-${counter * 100}%)`
